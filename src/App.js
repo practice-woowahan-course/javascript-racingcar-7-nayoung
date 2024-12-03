@@ -40,16 +40,16 @@ class App {
     let winner = [];
 
     carList.forEach((car) => {
-      const carMoveDistance = car.getAdvanceNumber()
+      const carMoveDistance = car.getAdvanceNumber();
       if (carMoveDistance > maxAdvance) {
         maxAdvance = carMoveDistance;
         winner = [car.getName()];
-      } else if (carMoveDistance == maxAdvance) {
+      } else if (carMoveDistance === maxAdvance) {
         winner.push(car.getName());
       }
     });
 
-    MissionUtils.Console.print(`최종 우승자 : ${winner}`);
+    MissionUtils.Console.print(`최종 우승자 : ${winner.join(", ")}`);
 
   }
 }
